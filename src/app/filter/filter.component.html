@@ -1,0 +1,33 @@
+<div class="filter-container runded-corners" flexLayout = "column" fxLayoutGap="4%">
+
+        <div>
+          <select class="runded-corners dropdown">
+          <option *ngFor="let city of cityList" 
+          [value]="city.name" 
+          >
+          <!-- [attr.selected]="passenger.Title==title.Text ? true : null" -->
+        {{city.name}}
+        </option>
+        </select>
+        </div> 
+        <div>
+        <select class="runded-corners dropdown">
+          <option *ngFor="let city of cityList" 
+          [value]="city.skin_color" 
+          >
+          <!-- [attr.selected]="passenger.Title==title.Text ? true : null" -->
+        {{city.skin_color}}
+        </option>
+        </select>
+        </div>
+
+        <div>
+          <select class="runded-corners dropdown">
+            <option *ngFor="let city of cityList" 
+              [value]="city.birth_year"><!-- [attr.selected]="passenger.Title==title.Text ? true : null" -->
+              {{city.birth_year}}
+            </option>
+          </select>
+        </div>
+  
+</div>
