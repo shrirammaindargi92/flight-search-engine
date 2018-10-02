@@ -7,7 +7,7 @@ import { FilterComponent } from './filter/filter.component';
 import { ContentComponent } from './content/content.component';
 import { FlightListComponent } from './flight-list/flight-list.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

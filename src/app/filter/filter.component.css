@@ -1,7 +1,7 @@
 .filter-container {
     padding: 5px 10px 10px 10px;
     height: 100%;
-    width: 15%;
+    width: 100%;
     overflow-y: auto;
     border-style: solid;
     border-width: 1px 1px 1px 1px;
@@ -10,7 +10,7 @@
 .flex-wrap {
     display: block;
 }
-.runded-corners {
+.rounded-corners {
     border-radius: 5px;    
 }
 .dropdown {
@@ -26,7 +26,7 @@
 .slicer-container {
     padding: 5px 10px 10px 10px;
     height: 100%;
-    width: 15%;
+    width: 100%;
     overflow-y: auto;
     border-style: solid;
     border-width: 1px 1px 1px 1px;

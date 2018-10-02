@@ -1,7 +1,7 @@
-<div class="filter-container runded-corners" flexLayout = "column" fxLayoutGap="4%">
+<div class="filter-container rounded-corners" flexLayout = "column" fxLayoutGap="4%">
         <form (ngSubmit)="submitFilter(filter)" #filter="ngForm">
           <div>
-            <select class="runded-corners dropdown margin-top-20" [(ngModel)]="sourceCity" name="sourceCity">
+            <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="sourceCity" name="sourceCity">
               <option [value]="sourceCity" disabled  selected> Enter Origin City </option>
               <option *ngFor="let city of cityList" 
                 [value]="city.name">
@@ -10,7 +10,7 @@
             </select>
           </div> 
           <div>
-            <select class="runded-corners dropdown margin-top-20" [(ngModel)]="destinationCity" name="destinationCity">
+            <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="destinationCity" name="destinationCity">
               <option [value]="destinationCity" disabled  selected> Enter Destination City </option>
               <option *ngFor="let city of cityList" 
                   [value]="city.skin_color">
@@ -25,7 +25,7 @@
               <input type="date" name = "returnDate"  [value] = "returnDate" [(ngModel)]="returnDate" class="margin-top-20 datePicker runded-corners"/>
             </div>
           <div>
-            <select class="runded-corners dropdown margin-top-20" [(ngModel)]="passengers" name="passengers">
+            <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="passengers" name="passengers">
                 <option [ngValue]="undefined" disabled  selected> Passengers</option>
               <option *ngFor="let city of cityList" 
                 [value]="city.birth_year"><!-- [attr.selected]="passenger.Title==title.Text ? true : null" -->
@@ -38,7 +38,7 @@
           </div>
         </form>
 </div>
-<div class="slicer-container margin-top-20 runded-corners">
+<div class="slicer-container margin-top-20 rounded-corners">
   <label class="margin-top-20">Refine fllight search</label>
   <input type="range" [(ngModel)] = "costRange" name="costRange" class="slicer  margin-top-20"
     min = "0" max = "{{maxFlightRangePrice}}" [value] = "costRange"/>
