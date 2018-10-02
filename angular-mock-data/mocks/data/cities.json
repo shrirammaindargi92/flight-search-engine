@@ -1,0 +1,74 @@
+{
+    "cities": {
+        "results": [
+                {
+               "cityName": "Mumbai",
+               "cityAirportName": "Chhatrapati Shivaji International Airport"
+                },
+                 {
+               "cityName": "Delhi",
+               "cityAirportName": "Indira Gandhi International Airport"
+                },
+                 {
+               "cityName": "Car Nicobar",
+               "cityAirportName": "Car Nicobar Air Force Base"
+                },
+                 {
+               "cityName": "Campbell Bay",
+               "cityAirportName": "INS Baaz"
+                },
+                {
+               "cityName": "Kadapa",
+               "cityAirportName": "Yeduguri Sandanti Rajashekhar Reddy Airport"
+                },
+                {
+               "cityName": "Port Blair",
+               "cityAirportName": "Veer Savarkar International Airport"
+                },
+                {
+               "cityName": "Tirupati",
+               "cityAirportName": "Tirupati International Airport"
+                },
+                {
+               "cityName": "Guwahati",
+               "cityAirportName": "Lokpriya Gopinath Bordoloi International Airport"
+                },
+                {
+               "cityName": "Ahmedabad",
+               "cityAirportName": "Sardar Vallabhbhai Patel International Airport"
+                },
+                {
+               "cityName": "Dholera",
+               "cityAirportName": "Dholera International Airport"
+                },
+                {
+               "cityName": "Jammu",
+               "cityAirportName": "Jammu Airport"
+                },
+                {
+               "cityName": "Srinagar",
+               "cityAirportName": "Sheikh ul-Alam International Airport"
+                },
+                {
+               "cityName": "Mysore",
+               "cityAirportName": "Mysore Airport"
+                },
+                {
+               "cityName": "Indore",
+               "cityAirportName": "Devi Ahilyabai Holkar International Airport"
+                },
+                {
+               "cityName": "Kolhapur",
+               "cityAirportName": "Chhatrapati Rajaram Maharaj Airport"
+                },
+                {
+               "cityName": "Nagpur",
+               "cityAirportName": "Dr. Babasaheb Ambedkar International Airport"
+                },
+                {
+               "cityName": "Nanded",
+               "cityAirportName": "Shri Guru Gobind Singh Ji Airport"
+                }
+        ]
+    }
+}

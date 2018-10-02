@@ -1,7 +1,8 @@
 <div flexLayout = "column" fxLayoutGap="4%">
-    <p>
-        flight-list works!
-    </p>
+    <div class="trip-container" *ngFor = "let trip of trips">
+        <h3>{{trip.fare | currency:'INR'}}</h3>
+        <small>{{trip.flightCode}}</small>
+    </div>
 </div>
 
 

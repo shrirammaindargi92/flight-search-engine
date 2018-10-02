@@ -8,8 +8,23 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class FlightDataService {
 
   constructor(private readonly httpClient: HttpClient) { }
+  
   public getFlights () {
     const apiUrl = 'http://localhost:4200/flights';
+    return new Observable((subsciber: Subscriber<any>) => { 
+        this.httpClient.get<any>(apiUrl).subscribe(result => {
+            subsciber.next(result);
+            subsciber.complete();
+        }, (error) => {
+            subsciber.error();
+            subsciber.complete();
+        });
+
+    });
+  }
+
+  getCities() {
+    const apiUrl = 'http://localhost:4200/cities';
     return new Observable((subsciber: Subscriber<any>) => { 
         this.httpClient.get<any>(apiUrl).subscribe(result => {
             subsciber.next(result);

@@ -2,19 +2,19 @@
         <form (ngSubmit)="submitFilter(filter)" #filter="ngForm">
           <div>
             <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="sourceCity" name="sourceCity">
-              <option [value]="sourceCity" disabled  selected> Enter Origin City </option>
-              <option *ngFor="let city of cityList" 
-                [value]="city.name">
-                {{city.name}}
+              <option [value]="undefined" disabled  selected> Enter Origin City </option>
+              <option *ngFor="let city of sourceCityList" 
+                [value]="city.cityName">
+                {{city.cityName}}
               </option>
             </select>
           </div> 
           <div>
             <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="destinationCity" name="destinationCity">
-              <option [value]="destinationCity" disabled  selected> Enter Destination City </option>
-              <option *ngFor="let city of cityList" 
-                  [value]="city.skin_color">
-                  {{city.skin_color}}
+              <option [value]="undefined" disabled  selected> Enter Destination City </option>
+              <option *ngFor="let city of sourceCityList" 
+                  [value]="city.cityName">
+                  {{city.cityName}}
               </option>
             </select>
           </div>
@@ -26,10 +26,10 @@
             </div>
           <div>
             <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="passengers" name="passengers">
-                <option [ngValue]="undefined" disabled  selected> Passengers</option>
-              <option *ngFor="let city of cityList" 
-                [value]="city.birth_year"><!-- [attr.selected]="passenger.Title==title.Text ? true : null" -->
-                {{city.birth_year}}
+              <option [ngValue]="undefined" disabled  selected> Passengers</option>
+              <option *ngFor="let flight of flightList" 
+                [value]="flight.fare"><!-- [attr.selected]="passenger.Title==title.Text ? true : null" -->
+                {{flight.fare}}
               </option>
             </select>
           </div>

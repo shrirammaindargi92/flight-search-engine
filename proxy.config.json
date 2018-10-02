@@ -1,6 +1,4 @@
 {
-   "/flights": {
-   "target":"http://localhost:3000",
-   "secure": false
-    }
+   "/flights": { "target":"http://localhost:3000", "secure": false },
+   "/cities": { "target":"http://localhost:3000", "secure": false }
 }
