@@ -8,9 +8,15 @@
     border-radius: 8px;
   }
 
-  .navbar a:hover {
-    background: #ddd;
-    color: black;
+  .navbar span {
+    font-size : 35px;
+    margin:20px 20px;
+  }
+
+  .navbar label {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top:20px;
   }
 
   .rounded-corners {
@@ -30,5 +36,5 @@
    border-style: solid;
    border-width: 1px 1px 1px 1px;
    background-color : #cfe0e8;
-   height:644px;
+   height:642px;
 }
