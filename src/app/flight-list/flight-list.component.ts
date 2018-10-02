@@ -11,6 +11,7 @@ import * as moment from 'moment';
 export class FlightListComponent implements OnInit, OnChanges {
 public trips: Array<any>;
 public filteredTrips: Array<any> =[];
+public noRecordsFoundFlag = false;
 @Input() public filterToList: Filter;
   constructor(private readonly flightDataService: FlightDataService) { }
 
@@ -24,6 +25,9 @@ public filteredTrips: Array<any> =[];
       console.log(this.filterToList);
       // this.ngOnInit();
       this.populateFilteredTrips();
+      if(this.trips.length <= 0){
+        this.noRecordsFoundFlag = true;
+      }
     }
   }
   populateTrips(): void {
