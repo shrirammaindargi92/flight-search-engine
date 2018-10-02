@@ -1,0 +1,34 @@
+.navbar {
+    overflow: hidden;
+    background-color: #b7d7e8;
+    position: fixed;
+    top: 3;
+    width: 97.5%;
+    height: 10%;
+    border-radius: 8px;
+  }
+
+  .navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  .rounded-corners {
+    border-radius: 5px;    
+}
+
+.filter-list-container {
+   padding: 13px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    background-color : #cfe0e8;
+    height:600px;
+}
+
+.filter-container {
+  padding: 13px;
+   border-style: solid;
+   border-width: 1px 1px 1px 1px;
+   background-color : #cfe0e8;
+   height:644px;
+}

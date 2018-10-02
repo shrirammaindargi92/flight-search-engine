@@ -1,8 +1,19 @@
-<div fxFlex="100" fxLayout="row" fxLayoutGap="4%">
-  <div fxFlex="20" fxLayout="column">
-      <app-filter ></app-filter>
-  </div>
-  <div fxFlex="80" fxLayout="column">
-      <app-flight-list ></app-flight-list>
-  </div>
+<div fxFlex="100" fxLayout="column" fxLayoutGap="10px">
+        <div fxFlex="10" fxLayout="row">
+           <div class="navbar">
+                <label>Flight Search Engine</label>
+           </div>
+        </div>
+        <div fxFlex="90" fxLayout="row" fxLayoutGap="10px">
+                <div fxFlex="30"  fxLayout="column">
+                    <div class="filter-container rounded-corners">
+                        <app-filter ></app-filter>
+                    </div>            
+                </div>
+                <div fxFlex="70" class="filter-list-container rounded-corners" fxLayout="column">
+                        <app-flight-list ></app-flight-list>
+                </div>
+        </div>
+            
+  
 </div>
