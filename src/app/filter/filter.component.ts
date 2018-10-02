@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FlightDataService } from '../shared/services/flight-data/flight-data.service';
 import { NgForm } from '@angular/forms';
 import { Filter } from '../shared/models/filter';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-filter',
@@ -14,7 +15,6 @@ public destinationCityList: Array<any>;
 public flightList: Array<any>;
 public maxFlightRangePrice: number = 10000;
 public costRange: number;
-
 @Output() public filterChange :EventEmitter<Filter> = new EventEmitter<Filter>();
 constructor(private readonly flightDataService: FlightDataService) { }
 
@@ -43,6 +43,7 @@ constructor(private readonly flightDataService: FlightDataService) { }
     return this.flightList;
   }
   public submitFilter(filterObject: NgForm): void {
+    debugger
     console.log(filterObject.value);
     this.filterChange.emit(filterObject.value);
   }

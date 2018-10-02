@@ -12,9 +12,14 @@ public filterToList: Filter;
 
   ngOnInit() {
   }
-  public filterReceived(event: any):void {
-    debugger
-    this.filterToList = event;
+  public filterReceived(event: Filter):void {
+    this.filterToList = new Filter(
+      event.sourceCity,
+      event.destinationCity,
+      event.departureDate,
+      event.passengers,
+      event.returnDate
+    );
   }
 
 }

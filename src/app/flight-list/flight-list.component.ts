@@ -1,28 +1,29 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { FlightDataService } from '../shared/services/flight-data/flight-data.service';
 import { Filter } from '../shared/models/filter';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-flight-list',
   templateUrl: './flight-list.component.html',
   styleUrls: ['./flight-list.component.css']
 })
-export class FlightListComponent implements OnInit,OnChanges {
+export class FlightListComponent implements OnInit, OnChanges {
 public trips: Array<any>;
-@Input() public filterFromContent: Filter;
+public filteredTrips: Array<any> =[];
+@Input() public filterToList: Filter;
   constructor(private readonly flightDataService: FlightDataService) { }
 
   ngOnInit() {
     this.populateTrips();
-    console.log('in flightList');
-    console.log(this.filterFromContent);
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
-    if (changes['filterFromContent'] && changes['filterFromContent'].currentValue) {
-      this.filterFromContent = changes['filterFromContent'].currentValue;
-      console.log(this.filterFromContent, 'in flightList');
-      this.ngOnInit();
+    if (changes['filterToList'] && changes['filterToList'].currentValue) {
+      this.filterToList = changes['filterToList'].currentValue;
+      console.log(this.filterToList);
+      // this.ngOnInit();
+      this.populateFilteredTrips();
     }
   }
   populateTrips(): void {
@@ -30,5 +31,13 @@ public trips: Array<any>;
       this.trips = flights.results;
       console.log(this.trips);
     });
+  }
+  public populateFilteredTrips(): void {
+    console.log(moment(this.trips[0].departureDate));
+    console.log(this.filterToList.departureDate);
+    this.trips = this.trips.filter((trip) =>
+    trip.sourceCity === this.filterToList.sourceCity &&
+    trip.destinationCity === this.filterToList.destinationCity &&
+    moment(trip.departureDate) >= moment(this.filterToList.departureDate));
   }
 }

@@ -1,8 +1,11 @@
 import * as moment from 'moment';
 export class Filter {
-    public sourceCity: string;
-    public destinationCity: string;
-    public departureDate: moment.Moment;
-    public returnDate?: moment.Moment;
-    public passengers: number;
+    [key: string]: any;
+    constructor(
+    public sourceCity: string,
+    public destinationCity: string,
+    public departureDate: moment.Moment,
+    public passengers: number,
+    public returnDate?: moment.Moment
+    ) {}
 }
