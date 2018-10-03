@@ -1,7 +1,13 @@
 <div flexLayout="column" flexLayoutGap="10px">
-    <div class="flight-details" flexLayout="row" flexLayoutGap="10px" *ngIf="showdetailsHeader">
-        <div fxFlex="80">
-            <h3>{{filterToList.sourceCity }} > {{ filterToList.destinationCity }}</h3>
+        <div class="flight-details" flexLayout="row" flexLayoutGap="10px" *ngIf="showdetailsHeader">
+            <div fxFlex = "80">
+                <h3 *ngIf="!filterToList.returnDate">{{filterToList.sourceCity }} > {{ filterToList.destinationCity }}</h3>
+                <h3 *ngIf="filterToList.returnDate">{{filterToList.sourceCity }} > {{ filterToList.destinationCity }} > {{filterToList.sourceCity}}</h3>
+            </div>
+            <div fxFlex = "20" flexLayout="column" flexLayoutGap="30px">
+                <div>Depart: {{filterToList.departureDate}}</div>
+                <div *ngIf="filterToList.returnDate">Return: {{filterToList.returnDate}}</div>
+            </div>
         </div>
         <div fxFlex="20" flexLayout="column" flexLayoutGap="30px">
             <div>Depart: {{filterToList.departureDate}}</div>

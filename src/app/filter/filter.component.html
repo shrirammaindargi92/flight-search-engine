@@ -1,5 +1,9 @@
-<div class="filter-container rounded-corners" flexLayout="column" fxLayoutGap="4%">
-        <form (ngSubmit)="submitFilter(filter)" #filter="ngForm">
+<div class="filter-container rounded-corners" flexLayout = "column" fxLayoutGap="4%">
+    <div class="tab">
+        <button class="tablinks" (click)="openTab($event, 'oneWay')">One Way</button>
+        <button class="tablinks" (click)="openTab($event, 'return')">Return</button>
+      </div>
+        <form (ngSubmit)="submitFilter(filter)" #filter="ngForm" id="oneWay" class="tabContent">
           <div>
             <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="sourceCity" (change)="sourceCitySelection($event.target.value)" name="sourceCity" required>
               <option [value]="undefined" disabled  selected> Enter Origin City </option>
@@ -21,7 +25,7 @@
           <div>
             <input type="date" name="departureDate" [value]="departureDate" max="{{returnDate}}" [(ngModel)]="departureDate" required class="margin-top-20 datePicker runded-corners"/>
           </div>
-          <div>
+          <div id="return" *ngIf="showReturnDate">
               <input type="date" name="returnDate"  min="{{departureDate}}" [value]="returnDate" [(ngModel)]="returnDate" required class="margin-top-20 datePicker runded-corners"/>
           </div>
           <div>

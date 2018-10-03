@@ -15,6 +15,7 @@ export class FilterComponent implements OnInit {
   public flightList: Array<any>;
   public maxFlightRangePrice = 100000;
   public costRange: number;
+  public showReturnDate = false;
   @Output() public filterChange: EventEmitter<Filter> = new EventEmitter<Filter>();
   @Output() public slicerChange: EventEmitter<number> = new EventEmitter<number>();
   constructor(private readonly flightDataService: FlightDataService) { }
@@ -47,4 +48,14 @@ export class FilterComponent implements OnInit {
   public onSlicerChange(change: any): void {
     this.slicerChange.emit(change);
   }
+
+  public openTab(evt, tabName): void {
+    this.showReturnDate = (tabName === 'return') ? true : false;
+    let tablinks;
+    tablinks = document.getElementsByClassName('tablinks');
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(' active', '');
+    }
+    evt.currentTarget.className += ' active';
+}
 }
