@@ -27,24 +27,21 @@ constructor(private readonly flightDataService: FlightDataService) { }
   public populateCityList(): void {
     this.flightDataService.getCities().subscribe((cities: any) => {
       this.sourceCityList = cities.results;
-      console.log(this.sourceCityList);
     });
   }
-
-  public onSelectSourceCity( event: any) :void {
-    console.log(event);
-  }
-
-  public populateFlights(): Array<any> {
+  public populateFlights() {
     this.flightDataService.getFlights().subscribe((flights: any) => {
       this.flightList = flights.results;
-      console.log(this.flightList);
     });
-    return this.flightList;
   }
   public submitFilter(filterObject: NgForm): void {
-    debugger
-    console.log(filterObject.value);
     this.filterChange.emit(filterObject.value);
+  }
+  public onRangeChange(range: any): void {
+    console.log(range);
+  }
+  public sourceCitySelection(selectedSourceCity: any): void {
+    this.destinationCityList = this.sourceCityList.filter((city)=> city.cityName !== selectedSourceCity);
+    console.log(this.destinationCityList);
   }
 }

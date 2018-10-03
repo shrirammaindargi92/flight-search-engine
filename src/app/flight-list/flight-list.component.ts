@@ -25,10 +25,9 @@ public noRecordsFoundFlag = false;
       console.log(this.filterToList);
       // this.ngOnInit();
       this.populateFilteredTrips();
-      if(this.trips.length <= 0){
-        this.noRecordsFoundFlag = true;
-      }
+        this.noRecordsFoundFlag = (this.trips.length <= 0) ? true: false;
     }
+   // this.ngOnInit();
   }
   populateTrips(): void {
     this.flightDataService.getFlights().subscribe((flights: any)=>{

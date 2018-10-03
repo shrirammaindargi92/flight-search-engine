@@ -1,6 +1,4 @@
-.trip-container {
-    /* border-style: solid; */
-    /* border-width: 12px 12x 12px 12px; */
+.trip {
     background-color : white;
     border-radius: 5px;
 }

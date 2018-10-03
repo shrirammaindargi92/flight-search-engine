@@ -1,16 +1,13 @@
-<div flexLayout = "column" fxLayoutGap="4%">
-    <div *ngFor = "let trip of trips">
-        <div class="trip-container">
+<div flexLayout = "column">
+    <div class="trip" *ngFor = "let trip of trips">
             <h3>{{trip.fare | currency:'INR'}}</h3>
             <small>{{trip.flightCode}}</small><br>
             <label>{{trip.sourceCity}} > {{trip.destinationCity}}</label>
-                <div fxLayoutGap="4%">
+                <div>
                         <label>Depart: {{trip.departureTime}}</label><br>
                         <label>Arrive: {{trip.arrivalTime}}</label>
-                        <button style="float: right; margin: 0 100px 100px 0;">Book this flight</button>
+                        <button>Book this flight</button>
                 </div>
-            
-        </div>
     </div>
     <div *ngIf="noRecordsFoundFlag">
         <label>NO Flights on this route</label>
