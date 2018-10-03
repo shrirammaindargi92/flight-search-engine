@@ -5,8 +5,8 @@
                 <h3 *ngIf="filterToList.returnDate">{{filterToList.sourceCity }} > {{ filterToList.destinationCity }} > {{filterToList.sourceCity}}</h3>
             </div>
             <div fxFlex = "20" flexLayout="column" flexLayoutGap="30px" class="details-dates">
-                <div>Depart: {{filterToList.departureDate}}</div>
-                <div *ngIf="filterToList.returnDate">Return: {{filterToList.returnDate}}</div>
+                <div>Depart: {{filterToList.departureDate | date}}</div>
+                <div *ngIf="filterToList.returnDate">Return: {{filterToList.returnDate | date}}</div>
             </div>
         </div>
         <div class="trip" *ngFor = "let trip of trips">
