@@ -8,6 +8,8 @@ import { Filter } from '../shared/models/filter';
 })
 export class ContentComponent implements OnInit {
 public filterToList: Filter;
+public changedSlicerValue: number;
+
   constructor() { }
 
   ngOnInit() {
@@ -20,6 +22,9 @@ public filterToList: Filter;
       event.passengers,
       event.returnDate
     );
+  }
+  public slicerChangeReceiver(event: any): void {
+    this.changedSlicerValue = event;
   }
 
 }

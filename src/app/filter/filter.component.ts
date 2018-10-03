@@ -16,6 +16,7 @@ public flightList: Array<any>;
 public maxFlightRangePrice: number = 10000;
 public costRange: number;
 @Output() public filterChange :EventEmitter<Filter> = new EventEmitter<Filter>();
+@Output() public slicerChange :EventEmitter<number> = new EventEmitter<number>();
 constructor(private readonly flightDataService: FlightDataService) { }
 
   ngOnInit() {
@@ -43,5 +44,9 @@ constructor(private readonly flightDataService: FlightDataService) { }
   public sourceCitySelection(selectedSourceCity: any): void {
     this.destinationCityList = this.sourceCityList.filter((city)=> city.cityName !== selectedSourceCity);
     console.log(this.destinationCityList);
+  }
+  public onSlicerChange(change: any):void {
+    console.log(change);
+    this.slicerChange.emit(change);
   }
 }

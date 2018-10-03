@@ -41,6 +41,6 @@
 <div class="slicer-container margin-top-20 rounded-corners">
   <label class="margin-top-20">Refine fllight search</label>
   <input #range type="range" [(ngModel)] = "costRange" name="costRange" class="slicer  margin-top-20"
-    min = "0" max = "{{maxFlightRangePrice}}" [value] = "costRange" onchange="onRangeChange(range)"/>
+    min = "0" max = "{{maxFlightRangePrice}}" [value] = "costRange" (change)="onSlicerChange($event.target.value)"/>
     <label class="margin-top-20">{{costRange}}</label>
 </div>

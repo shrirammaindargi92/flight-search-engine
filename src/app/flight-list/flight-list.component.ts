@@ -13,6 +13,7 @@ public trips: Array<any>;
 public filteredTrips: Array<any> =[];
 public noRecordsFoundFlag = false;
 @Input() public filterToList: Filter;
+@Input() public changedSlicerValue: number;
   constructor(private readonly flightDataService: FlightDataService) { }
 
   ngOnInit() {
@@ -23,11 +24,15 @@ public noRecordsFoundFlag = false;
     if (changes['filterToList'] && changes['filterToList'].currentValue) {
       this.filterToList = changes['filterToList'].currentValue;
       console.log(this.filterToList);
-      // this.ngOnInit();
       this.populateFilteredTrips();
         this.noRecordsFoundFlag = (this.trips.length <= 0) ? true: false;
     }
-   // this.ngOnInit();
+    if (changes['changedSlicerValue'] && changes['changedSlicerValue'].currentValue) {
+      this.changedSlicerValue = changes['changedSlicerValue'].currentValue;
+      console.log(this.changedSlicerValue);
+      this.populateFIlteredTripsBySlicer();
+        this.noRecordsFoundFlag = (this.trips.length <= 0) ? true: false;
+    }
   }
   populateTrips(): void {
     this.flightDataService.getFlights().subscribe((flights: any)=>{
@@ -36,11 +41,17 @@ public noRecordsFoundFlag = false;
     });
   }
   public populateFilteredTrips(): void {
-    console.log(moment(this.trips[0].departureDate));
-    console.log(this.filterToList.departureDate);
-    this.trips = this.trips.filter((trip) =>
-    trip.sourceCity === this.filterToList.sourceCity &&
-    trip.destinationCity === this.filterToList.destinationCity &&
-    moment(trip.departureDate) >= moment(this.filterToList.departureDate));
+    if(this.trips.length>0){
+      this.trips = this.trips.filter((trip) =>
+      trip.sourceCity === this.filterToList.sourceCity &&
+      trip.destinationCity === this.filterToList.destinationCity &&
+      moment(trip.departureDate) >= moment(this.filterToList.departureDate));
+    }
+  }
+  public populateFIlteredTripsBySlicer():void {
+    if(this.trips.length>0){
+      this.trips = this.trips.filter((trip) =>
+      trip.fare <= this.changedSlicerValue);
+    }
   }
 }
