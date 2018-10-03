@@ -14,7 +14,7 @@ public changedSlicerValue: number;
 
   ngOnInit() {
   }
-  public filterReceived(event: Filter):void {
+  public filterReceived(event: Filter): void {
     this.filterToList = new Filter(
       event.sourceCity,
       event.destinationCity,

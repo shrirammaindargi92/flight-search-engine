@@ -9,8 +9,9 @@ import * as moment from 'moment';
   styleUrls: ['./flight-list.component.css']
 })
 export class FlightListComponent implements OnInit, OnChanges {
+public tripData: Array<any>;
 public trips: Array<any>;
-public filteredTrips: Array<any> =[];
+public filteredTrips: Array<any> = [];
 public noRecordsFoundFlag = false;
 @Input() public filterToList: Filter;
 @Input() public changedSlicerValue: number;
@@ -23,35 +24,28 @@ public noRecordsFoundFlag = false;
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes['filterToList'] && changes['filterToList'].currentValue) {
       this.filterToList = changes['filterToList'].currentValue;
-      console.log(this.filterToList);
       this.populateFilteredTrips();
-        this.noRecordsFoundFlag = (this.trips.length <= 0) ? true: false;
+        this.noRecordsFoundFlag = (this.trips.length <= 0) ? true : false;
     }
     if (changes['changedSlicerValue'] && changes['changedSlicerValue'].currentValue) {
       this.changedSlicerValue = changes['changedSlicerValue'].currentValue;
-      console.log(this.changedSlicerValue);
       this.populateFIlteredTripsBySlicer();
-        this.noRecordsFoundFlag = (this.trips.length <= 0) ? true: false;
+        this.noRecordsFoundFlag = (this.trips.length <= 0) ? true : false;
     }
   }
   populateTrips(): void {
-    this.flightDataService.getFlights().subscribe((flights: any)=>{
-      this.trips = flights.results;
-      console.log(this.trips);
+    this.flightDataService.getFlights().subscribe((flights: any) => {
+      this.trips = this.tripData = flights.results;
     });
   }
   public populateFilteredTrips(): void {
-    if(this.trips.length>0){
-      this.trips = this.trips.filter((trip) =>
+      this.trips = this.tripData.filter((trip) =>
       trip.sourceCity === this.filterToList.sourceCity &&
       trip.destinationCity === this.filterToList.destinationCity &&
       moment(trip.departureDate) >= moment(this.filterToList.departureDate));
-    }
   }
-  public populateFIlteredTripsBySlicer():void {
-    if(this.trips.length>0){
-      this.trips = this.trips.filter((trip) =>
+  public populateFIlteredTripsBySlicer(): void {
+      this.trips = this.tripData.filter((trip) =>
       trip.fare <= this.changedSlicerValue);
-    }
   }
 }

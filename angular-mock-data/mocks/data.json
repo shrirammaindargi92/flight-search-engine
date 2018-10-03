@@ -76,7 +76,7 @@
         "results":[
                 {
                     "id": 1,
-                    "fare": "25148",
+                    "fare": 25148,
                     "sourceCity": "Mumbai",
                     "destinationCity": "Delhi",
                     "departureDate": "2018-10-03",
@@ -86,7 +86,7 @@
                 },
                 {
                     "id": 2,
-                    "fare": "52000",
+                    "fare": 52000,
                     "sourceCity": "Mumbai",
                     "destinationCity": "Delhi",
                     "departureDate": "2018-02-10",
@@ -96,7 +96,7 @@
                 },
                 {
                     "id": 3,
-                    "fare": "100000",
+                    "fare": 100000,
                     "sourceCity": "Mumbai",
                     "destinationCity": "Delhi",
                     "departureDate": "2018-10-27",
@@ -106,7 +106,7 @@
                 },
                 {
                     "id": 4,
-                    "fare": "68241",
+                    "fare": 68241,
                     "sourceCity": "Mumbai",
                     "destinationCity": "Delhi",
                     "departureDate": "2018-10-20",
@@ -116,7 +116,7 @@
                 },
                 {
                     "id": 5,
-                    "fare": "60000",
+                    "fare": 60000,
                     "sourceCity": "Delhi",
                     "destinationCity": "Tirupati",
                     "departureDate": "2018-10-29",
@@ -126,7 +126,7 @@
                 },
                 {
                     "id": 6,
-                    "fare": "54287",
+                    "fare": 54287,
                     "sourceCity": "Delhi",
                     "destinationCity": "Port Blair",
                     "departureDate": "2018-11-13",
@@ -136,7 +136,7 @@
                 },
                 {
                     "id": 7,
-                    "fare": "45000",
+                    "fare": 45000,
                     "sourceCity": "Car Nicobar",
                     "destinationCity": "Port Blair",
                     "departureDate": "2018-10-08",
@@ -146,7 +146,7 @@
                 },
                 {
                     "id": 8,
-                    "fare": "40000",
+                    "fare": 40000,
                     "sourceCity": "Guwahati",
                     "destinationCity": "Ahmedabad",
                     "departureDate": "2019-01-03",
@@ -156,7 +156,7 @@
                 },
                 {
                     "id": 9,
-                    "fare": "68700",
+                    "fare": 68700,
                     "sourceCity": "Dholera",
                     "destinationCity": "Jammu",
                     "departureDate": "2018-10-10",
@@ -166,7 +166,7 @@
                 },
                 {
                     "id": 10,
-                    "fare": "72000",
+                    "fare": 72000,
                     "sourceCity": "Srinagar",
                     "destinationCity": "Mysore",
                     "departureDate": "2018-10-16",
@@ -176,7 +176,7 @@
                 },
                 {
                     "id": 11,
-                    "fare": "22000",
+                    "fare": 22000,
                     "sourceCity": "Indore",
                     "destinationCity": "Kolhapur",
                     "departureDate": "2018-11-12",
@@ -186,7 +186,7 @@
                 },
                 {
                     "id": 12,
-                    "fare": "4000",
+                    "fare": 4000,
                     "sourceCity": "Nagpur",
                     "destinationCity": "Nanded",
                     "departureDate": "2018-11-22",
@@ -196,7 +196,7 @@
                 },
                 {
                     "id": 13,
-                    "fare": "23000",
+                    "fare": 23000,
                     "sourceCity": "Ahmedabad",
                     "destinationCity": "Kolhapur",
                     "departureDate": "2018-12-10",
@@ -206,7 +206,7 @@
                 },
                 {
                     "id": 14,
-                    "fare": "150000",
+                    "fare": 150000,
                     "sourceCity": "Jammu",
                     "destinationCity": "Port Blair",
                     "departureDate": "2018-11-13",
@@ -216,7 +216,7 @@
                 },
                 {
                     "id": 15,
-                    "fare": "5000",
+                    "fare": 5000,
                     "sourceCity": "Mysore",
                     "destinationCity": "Mumbai",
                     "departureDate": "2018-12-31",

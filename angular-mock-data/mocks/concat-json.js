@@ -4,5 +4,4 @@ jsonConcat({
     dest: "angular-mock-data/mocks/data.json",
 },
  function(json){
-    console.log(json);
 });

@@ -13,10 +13,10 @@ export class FilterComponent implements OnInit {
 public sourceCityList: Array<any>;
 public destinationCityList: Array<any>;
 public flightList: Array<any>;
-public maxFlightRangePrice: number = 10000;
+public maxFlightRangePrice = 100000;
 public costRange: number;
-@Output() public filterChange :EventEmitter<Filter> = new EventEmitter<Filter>();
-@Output() public slicerChange :EventEmitter<number> = new EventEmitter<number>();
+@Output() public filterChange: EventEmitter<Filter> = new EventEmitter<Filter>();
+@Output() public slicerChange: EventEmitter<number> = new EventEmitter<number>();
 constructor(private readonly flightDataService: FlightDataService) { }
 
   ngOnInit() {
@@ -38,15 +38,10 @@ constructor(private readonly flightDataService: FlightDataService) { }
   public submitFilter(filterObject: NgForm): void {
     this.filterChange.emit(filterObject.value);
   }
-  public onRangeChange(range: any): void {
-    console.log(range);
-  }
   public sourceCitySelection(selectedSourceCity: any): void {
-    this.destinationCityList = this.sourceCityList.filter((city)=> city.cityName !== selectedSourceCity);
-    console.log(this.destinationCityList);
+    this.destinationCityList = this.sourceCityList.filter((city) => city.cityName !== selectedSourceCity);
   }
-  public onSlicerChange(change: any):void {
-    console.log(change);
+  public onSlicerChange(change: any): void {
     this.slicerChange.emit(change);
   }
 }
