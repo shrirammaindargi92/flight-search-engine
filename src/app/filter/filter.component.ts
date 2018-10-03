@@ -14,7 +14,8 @@ export class FilterComponent implements OnInit {
   public destinationCityList: Array<any>;
   public flightList: Array<any>;
   public maxFlightRangePrice = 100000;
-  public costRange: number;
+  public minFlightRangePrice = 0;
+  public costRange = 50000;
   public showReturnDate = false;
   @Output() public filterChange: EventEmitter<Filter> = new EventEmitter<Filter>();
   @Output() public slicerChange: EventEmitter<number> = new EventEmitter<number>();
@@ -23,6 +24,7 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
     this.populateCityList();
     this.populateFlights();
+    this.slicerChange.emit(this.costRange);
   }
 
   public populateCityList(): void {

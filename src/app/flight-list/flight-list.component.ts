@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
+import * as moment from 'moment';
+
 import { FlightDataService } from '../shared/services/flight-data/flight-data.service';
 import { Filter } from '../shared/models/filter';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-flight-list',
@@ -9,14 +10,17 @@ import * as moment from 'moment';
   styleUrls: ['./flight-list.component.css']
 })
 export class FlightListComponent implements OnInit, OnChanges {
+
   public tripData: Array<any>;
   public trips: Array<any>;
   public filteredTrips: Array<any> = [];
   public noRecordsFoundFlag = false;
   public showdetailsHeader = false;
+
   @Input() public filterToList: Filter;
   @Input() public changedSlicerValue: number;
-    constructor(private readonly flightDataService: FlightDataService) { }
+
+  constructor(private readonly flightDataService: FlightDataService) { }
 
   ngOnInit() {
     this.populateTrips();
@@ -31,7 +35,7 @@ export class FlightListComponent implements OnInit, OnChanges {
     }
     if (changes['changedSlicerValue'] && changes['changedSlicerValue'].currentValue) {
       this.changedSlicerValue = changes['changedSlicerValue'].currentValue;
-      this.populateFIlteredTripsBySlicer();
+      this.populateFilteredTrips(); // you can call populateFIlteredTripsBySlicer to make slicer work seperatly
         this.noRecordsFoundFlag = (this.trips.length <= 0) ? true : false;
     }
   }
@@ -46,11 +50,13 @@ export class FlightListComponent implements OnInit, OnChanges {
       this.trips = this.tripData.filter((trip) =>
       trip.sourceCity === this.filterToList.sourceCity &&
       trip.destinationCity === this.filterToList.destinationCity &&
-      moment(trip.departureDate) >= moment(this.filterToList.departureDate));
-  }
-
-  public populateFIlteredTripsBySlicer(): void {
-      this.trips = this.tripData.filter((trip) =>
+      moment(trip.departureDate) >= moment(this.filterToList.departureDate) &&
       trip.fare <= this.changedSlicerValue);
   }
+
+  // uncomment code to make slicer work seperatly
+  // public populateFIlteredTripsBySlicer(): void {
+  //     this.trips = this.tripData.filter((trip) =>
+  //     trip.fare <= this.changedSlicerValue);
+  // }
 }

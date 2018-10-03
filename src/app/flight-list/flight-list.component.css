@@ -11,4 +11,18 @@
     background-color: white;
     border-radius: 5px;
     height: 100px;
+    padding: 5px 5px 5px 5px;
+}
+
+.noRecorsfoundFlag{
+    margin: 20% 0 0 40%;
+}
+.book-button {
+    margin-top: 110px;
+}
+.details-dates {
+    margin-top: 34px;
+}
+.details-route {
+    margin-top: 20px;
 }

@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.action-button {
+    background-color: #68b1d8;
+    color: white;
+  }
