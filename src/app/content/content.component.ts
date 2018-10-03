@@ -12,8 +12,8 @@ public changedSlicerValue: number;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
   public filterReceived(event: Filter): void {
     this.filterToList = new Filter(
       event.sourceCity,
@@ -23,6 +23,7 @@ public changedSlicerValue: number;
       event.returnDate
     );
   }
+
   public slicerChangeReceiver(event: any): void {
     this.changedSlicerValue = event;
   }

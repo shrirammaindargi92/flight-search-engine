@@ -1,4 +1,4 @@
-<div class="filter-container rounded-corners" flexLayout = "column" fxLayoutGap="4%">
+<div class="filter-container rounded-corners" flexLayout="column" fxLayoutGap="4%">
         <form (ngSubmit)="submitFilter(filter)" #filter="ngForm">
           <div>
             <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="sourceCity" (change)="sourceCitySelection($event.target.value)" name="sourceCity" required>
@@ -19,11 +19,11 @@
             </select>
           </div>
           <div>
-            <input type="date" name = "departureDate" [value]="departureDate" max = "{{returnDate}}" [(ngModel)]="departureDate" required class="margin-top-20 datePicker runded-corners"/>
+            <input type="date" name="departureDate" [value]="departureDate" max="{{returnDate}}" [(ngModel)]="departureDate" required class="margin-top-20 datePicker runded-corners"/>
           </div>
           <div>
-              <input type="date" name = "returnDate"  min="{{departureDate}}" [value] = "returnDate" [(ngModel)]="returnDate" required class="margin-top-20 datePicker runded-corners"/>
-            </div>
+              <input type="date" name="returnDate"  min="{{departureDate}}" [value]="returnDate" [(ngModel)]="returnDate" required class="margin-top-20 datePicker runded-corners"/>
+          </div>
           <div>
             <select class="rounded-corners dropdown margin-top-20" [(ngModel)]="passengers" required name="passengers">
               <option [ngValue]="undefined" disabled  selected> Passengers</option>
@@ -39,8 +39,8 @@
         </form>
 </div>
 <div class="slicer-container margin-top-20 rounded-corners">
-  <label class="margin-top-20">Refine fllight search</label>
-  <input #range type="range" [(ngModel)] = "costRange" name="costRange" class="slicer  margin-top-20"
-    min = "0" max = "{{maxFlightRangePrice}}" [value] = "costRange" (change)="onSlicerChange($event.target.value)"/>
+    <label class="margin-top-20">Refine fllight search</label>
+    <input #range type="range" [(ngModel)] = "costRange" name="costRange" class="slicer  margin-top-20"
+      min="0" max="{{maxFlightRangePrice}}" [value]="costRange" (change)="onSlicerChange($event.target.value)"/>
     <label class="margin-top-20">{{costRange}}</label>
 </div>

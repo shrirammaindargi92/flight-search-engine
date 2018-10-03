@@ -9,14 +9,14 @@ import * as moment from 'moment';
   styleUrls: ['./flight-list.component.css']
 })
 export class FlightListComponent implements OnInit, OnChanges {
-public tripData: Array<any>;
-public trips: Array<any>;
-public filteredTrips: Array<any> = [];
-public noRecordsFoundFlag = false;
-public showdetailsHeader = false;
-@Input() public filterToList: Filter;
-@Input() public changedSlicerValue: number;
-  constructor(private readonly flightDataService: FlightDataService) { }
+  public tripData: Array<any>;
+  public trips: Array<any>;
+  public filteredTrips: Array<any> = [];
+  public noRecordsFoundFlag = false;
+  public showdetailsHeader = false;
+  @Input() public filterToList: Filter;
+  @Input() public changedSlicerValue: number;
+    constructor(private readonly flightDataService: FlightDataService) { }
 
   ngOnInit() {
     this.populateTrips();
@@ -35,17 +35,20 @@ public showdetailsHeader = false;
         this.noRecordsFoundFlag = (this.trips.length <= 0) ? true : false;
     }
   }
-  populateTrips(): void {
+
+  public populateTrips(): void {
     this.flightDataService.getFlights().subscribe((flights: any) => {
       this.trips = this.tripData = flights.results;
     });
   }
+
   public populateFilteredTrips(): void {
       this.trips = this.tripData.filter((trip) =>
       trip.sourceCity === this.filterToList.sourceCity &&
       trip.destinationCity === this.filterToList.destinationCity &&
       moment(trip.departureDate) >= moment(this.filterToList.departureDate));
   }
+
   public populateFIlteredTripsBySlicer(): void {
       this.trips = this.tripData.filter((trip) =>
       trip.fare <= this.changedSlicerValue);
