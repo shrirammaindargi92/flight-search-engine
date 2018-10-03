@@ -1,13 +1,13 @@
 <div flexLayout="column" flexLayoutGap="10px">
-        <div class="flight-details" flexLayout="row" flexLayoutGap="10px" *ngIf="showdetailsHeader">
-            <div fxFlex = "80">
-                <h3>{{filterToList.sourceCity }} > {{ filterToList.destinationCity }}</h3>
-            </div>
-            <div fxFlex = "20" flexLayout="column" flexLayoutGap="30px">
-                <div>Depart: {{filterToList.departureDate}}</div>
-                <div>Return: {{filterToList.returnDate}}</div>
-            </div>
+    <div class="flight-details" flexLayout="row" flexLayoutGap="10px" *ngIf="showdetailsHeader">
+        <div fxFlex="80">
+            <h3>{{filterToList.sourceCity }} > {{ filterToList.destinationCity }}</h3>
         </div>
+        <div fxFlex="20" flexLayout="column" flexLayoutGap="30px">
+            <div>Depart: {{filterToList.departureDate}}</div>
+            <div>Return: {{filterToList.returnDate}}</div>
+        </div>
+    </div>
     <div class="trip" *ngFor = "let trip of trips">
         <div class="trip-details">
             <h3>{{trip.fare | currency:'INR'}}</h3>
@@ -16,7 +16,7 @@
                 <div>
                         <label>Depart: {{trip.departureTime}}</label><br>
                         <label>Arrive: {{trip.arrivalTime}}</label>
-                        <button class="book-flight">Book this flight</button>
+                        <button>Book this flight</button>
                 </div>
         </div>        
     </div>
