@@ -13,6 +13,7 @@ public tripData: Array<any>;
 public trips: Array<any>;
 public filteredTrips: Array<any> = [];
 public noRecordsFoundFlag = false;
+public showdetailsHeader = false;
 @Input() public filterToList: Filter;
 @Input() public changedSlicerValue: number;
   constructor(private readonly flightDataService: FlightDataService) { }
@@ -26,6 +27,7 @@ public noRecordsFoundFlag = false;
       this.filterToList = changes['filterToList'].currentValue;
       this.populateFilteredTrips();
         this.noRecordsFoundFlag = (this.trips.length <= 0) ? true : false;
+        this.showdetailsHeader = true;
     }
     if (changes['changedSlicerValue'] && changes['changedSlicerValue'].currentValue) {
       this.changedSlicerValue = changes['changedSlicerValue'].currentValue;

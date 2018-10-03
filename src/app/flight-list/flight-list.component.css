@@ -10,3 +10,8 @@
 .trip-details {
     margin: 15px
 }
+.flight-details{
+    background-color: white;
+    border-radius: 5px;
+    height: 100px;
+}
